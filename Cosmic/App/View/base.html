@@ -35,11 +35,11 @@
     <link rel="stylesheet" href="/assets/css/web.responsive.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+
     <script src="/assets/js/jquery-3.2.1.min.js"></script>
     <script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-  
+
     <script>
     var Site = {
         name: "{{site.sitename}}",
@@ -47,8 +47,8 @@
         game_url: "{{site.cpath}}",
         figure_url: "{{site.fpath}}"
     }
-    
-    {% if player is empty %}  
+
+    {% if player is empty %}
     var User = {
         id: 0,
         username: "",
@@ -59,7 +59,7 @@
     {% else %}
     var Client = {
         client_radio: "{{client.client_radio}}",
-        nitro_path: "{{client.nitro_path}}"   
+        nitro_path: "{{client.nitro_path}}"
     }
     var User = {
         id: {{player.id}},
@@ -161,7 +161,7 @@
     {% endif %}
 
     <header class="header-container pixelated is-small">
-        <div class="header-content"> 
+        <div class="header-content">
             <div class="logo"><a href="/home"><img src="https://habbofont.net/font/hma/{{site.shortname}}.gif"
                         style="margin-top: 30px;"></a></div>
             <div class="account-container">
@@ -261,7 +261,7 @@
     </section>
 
     <footer class="footer-container">
-        <div class="footer-copyright">&copy; 2019 {{site.domain}} | <a href="/help/">{{locale_base.footer_helptool}}</a> | <a
+        <div class="footer-copyright">&copy; {{'now'|date('Y')}} {{site.domain|replace({'http://': "", 'https://': ""})}} | <a href="/help/">{{locale_base.footer_helptool}}</a> | <a
                 href="#" class="about-dialog-button">Cosmic</a></div>
     </footer>
 
